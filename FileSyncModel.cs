@@ -16,8 +16,6 @@ namespace FileSyncApp
         private XmlDocument xmlLog;
         private List<FileChangeLog> jsonLog;
 
-
-
         public FileSyncModel(string sourceDirectory, string destinationDirectory)
         {
             this.sourceDirectory = sourceDirectory;
