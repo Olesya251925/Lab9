@@ -50,7 +50,7 @@ namespace FileSyncApp
                 string status = $"Файл создан: {e.Name}";
                 DisplayStatus(status);
 
-                // Log the change in XML format
+                // изменение в формате XML
                 XmlElement logEntry = xmlLog.CreateElement("LogEntry");
                 logEntry.SetAttribute("type", "Created");
                 logEntry.InnerText = e.Name;
@@ -76,7 +76,7 @@ namespace FileSyncApp
                 string status = $"Файл удален: {e.Name}";
                 DisplayStatus(status);
 
-                // Log the change in XML format
+                // изменение в формате XML
                 XmlElement logEntry = xmlLog.CreateElement("LogEntry");
                 logEntry.SetAttribute("type", "Deleted");
                 logEntry.InnerText = e.Name;
@@ -104,14 +104,14 @@ namespace FileSyncApp
                 processedFiles.Remove(e.OldName);
                 processedFiles.Add(e.Name);
 
-                // Log the change in XML format
+               //изменение в формате XML
                 XmlElement logEntry = xmlLog.CreateElement("LogEntry");
                 logEntry.SetAttribute("type", "Renamed");
                 logEntry.SetAttribute("oldName", e.OldName);
                 logEntry.InnerText = e.Name;
                 xmlLog.DocumentElement.AppendChild(logEntry);
 
-                // Log the change in JSON format
+                //изменение в формате JSON
                 FileChangeLog changeLog = new FileChangeLog()
                 {
                     Type = "Renamed",
