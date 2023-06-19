@@ -54,7 +54,7 @@ namespace FileSyncApp
                 logEntry.InnerText = e.Name;
                 xmlLog.DocumentElement.AppendChild(logEntry);
 
-                // Log the change in JSON format
+                // изменение в формате JSON 
                 FileChangeLog changeLog = new FileChangeLog()
                 {
                     Type = "Created",
